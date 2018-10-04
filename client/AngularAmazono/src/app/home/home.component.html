@@ -1,0 +1,64 @@
+<section id="home">
+	<div class="container-fluid d-none d-md-block">
+<ngb-carousel *ngIf="images">
+  <ng-template ngbSlide>
+    <img src="./assets/img/image1.jpg" alt="Random first slide">
+    <div class="carousel-caption">
+      
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="./assets/img/image2.jpg" alt="Random second slide">
+    <div class="carousel-caption">
+      
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="./assets/img/image3.jpg" alt="Random second slide">
+    <div class="carousel-caption">
+      
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <img src="./assets/img/image4.jpg" alt="Random second slide">
+    <div class="carousel-caption">
+      
+    </div>
+  </ng-template>
+ <ng-template ngbSlide>
+    <img src="./assets/img/image5.jpg" alt="Random second slide">
+    <div class="carousel-caption">
+      
+    </div>
+  </ng-template>
+ 
+</ngb-carousel>
+
+	</div>
+
+  <div class="container p-5">
+    <app-message></app-message>
+    <p class="lead">
+      <b>Recommended Deals:</b>
+    </p>
+    <div class="row">
+      <div *ngIf="!products" class="m-auto">
+        <h1 class="text-center display-3 mt-5">
+          <i class="fa fa-spinner fa-spin"></i>
+        </h1>
+      </div>
+      <div *ngFor="let product of products" class="col-md-3 mb-5">
+        <a routerLink="/product/{{ product._id}}">
+          <div class="card bg-light">
+            <img src="{{ product.img }}" alt="product" class="card-imgtop">
+            <div class="card-body">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <p class="card-text">{{ product.price | currency}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+	
+</section>

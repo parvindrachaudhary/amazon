@@ -1,0 +1,16 @@
+ngb-carousel{
+	min-width:1000px;
+	max-width:1500px;
+	height:400px;
+	margin-left:auto;
+	marging-right:auto;
+}
+ng-template>img{
+	max-height:430px;
+}
+
+.item{
+	position:relative;
+	left:50%;
+	transform:translateX(-50%);
+}
